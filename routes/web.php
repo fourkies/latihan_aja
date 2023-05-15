@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/admin', function () {
     return view('admin/dashboard_admin');
 });
 
@@ -26,4 +26,8 @@ Route::get('/dashboard', function () {
 Route::controller(UserController::class)->name('user.')->group(function () {
     Route::get('/user', 'getUser')->name('getUser');
     Route::get('/tambah', 'tambahForm')->name('tambahForm');
+    Route::get('/edit/{user}', 'editForm')->name('editForm');
+    Route::post('/simpan', 'saveUser')->name('saveUser');
+    Route::patch('/update/{user}', 'updateUser')->name('updateUser');
+    Route::delete('/hapus/{user}', 'deleteUser')->name('deleteUser');
 });
