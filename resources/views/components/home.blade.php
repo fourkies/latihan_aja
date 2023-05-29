@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.111.3">
-    <title>Latihan Aja</title>
+    <title>My Bootstrap</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
@@ -224,7 +224,7 @@
                         contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply
                         skip over it entirely.</p>
                     <p>
-                        <a href="/admin" class="btn btn-primary my-2">Dashboard</a>
+                        <a href="#" class="btn btn-primary my-2">Main call to action</a>
                         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
                     </p>
                 </div>
@@ -452,9 +452,7 @@
         </div>
     </footer>
 
-
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-
 
 </body>
 

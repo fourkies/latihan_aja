@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\KehadiranController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 });
 
@@ -24,10 +26,28 @@ Route::get('/admin', function () {
 
 
 Route::controller(UserController::class)->name('user.')->group(function () {
-    Route::get('/user', 'getUser')->name('getUser');
-    Route::get('/tambah', 'tambahForm')->name('tambahForm');
-    Route::get('/edit/{user}', 'editForm')->name('editForm');
-    Route::post('/simpan', 'saveUser')->name('saveUser');
-    Route::patch('/update/{user}', 'updateUser')->name('updateUser');
-    Route::delete('/hapus/{user}', 'deleteUser')->name('deleteUser');
+    Route::get('/user/view', 'getUser')->name('getUser');
+    Route::get('/user/tambah', 'tambah')->name('tambah');
+    Route::get('/user/edit/{user}', 'edit')->name('edit');
+    Route::post('/user/simpan', 'saveUser')->name('saveUser');
+    Route::patch('/user/update/{user}', 'updateUser')->name('updateUser');
+    Route::delete('/user/hapus/{user}', 'deleteUser')->name('deleteUser');
+});
+
+Route::controller(JabatanController::class)->name('jabatan.')->group(function () {
+    Route::get('/jabatan/view', 'getJabatan')->name('getJabatan');
+    Route::get('/jabatan/tambah', 'tambah')->name('tambah');
+    Route::get('/jabatan/edit/{jabatan}', 'edit')->name('edit');
+    Route::post('/jabatan/simpan', 'saveJabatan')->name('saveJabatan');
+    Route::patch('/jabatan/update/{jabatan}', 'updateJabatan')->name('updateJabatan');
+    Route::delete('/jabatan/hapus/{jabatan}', 'deleteJabatan')->name('deleteJabatan');
+});
+
+Route::controller(KehadiranController::class)->name('kehadiran.')->group(function () {
+    Route::get('/kehadiran/view', 'getKehadiran')->name('getKehadiran');
+    Route::get('/kehadiran/tambah', 'tambah')->name('tambah');
+    Route::get('/kehadiran/edit/{kehadiran}', 'edit')->name('edit');
+    Route::post('/kehadiran/simpan', 'saveKehadiran')->name('saveKehadiran');
+    Route::patch('/kehadiran/update/{kehadiran}', 'updateKehadiran')->name('updateKehadiran');
+    Route::delete('/kehadiran/hapus/{kehadiran}', 'deleteKehadiran')->name('deleteKehadiran');
 });
