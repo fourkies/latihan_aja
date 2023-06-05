@@ -32,14 +32,14 @@
                     <option value="{{ $user->id }}">{{ $user->name }}</option>
                 @endforeach
             </select>
-            <small id="emailHelp" class="form-text text-muted">example : Asrul Abdullah.</small>
+            <small id="emailHelp" class="form-text text-muted">example : Muhamad Rizky.</small>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Nama Jabatan</label>
             <input type="text" name="nama_jabatan" class="form-control" id="exampleInputEmail1"
                 aria-describedby="emailHelp" placeholder="Enter nama jabatan"
                 value="{{ old('nama_jabatan') ?? $jabatan->nama_jabatan }}">
-            <small id="emailHelp" class="form-text text-muted">ex. Kaprodi.</small>
+            <small id="emailHelp" class="form-text text-muted">ex. Mahasiswa.</small>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Tunjangan</label>

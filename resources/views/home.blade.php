@@ -224,7 +224,7 @@
                         contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply
                         skip over it entirely.</p>
                     <p>
-                        <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                        <a href="http://127.0.0.1:8000/admin" class="btn btn-primary my-2">My Dashboard</a>
                         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
                     </p>
                 </div>

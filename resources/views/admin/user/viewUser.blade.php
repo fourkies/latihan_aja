@@ -6,7 +6,7 @@
 
 @section('konten')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard User</h1>
+        <h1 class="h2">Dashboard Pengguna</h1>
 
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
@@ -47,14 +47,14 @@
                                 </span><span class="input-group-text border-0">
                                     <form onsubmit="return confirm('Data pengguna akan dihapus ?')"
                                         action=" {{ route('user.deleteUser', $user->id) }}" method="POST" ">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type=" submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
-                                </form>
-                            </span>
-                        </div>
-                    </td>
-                </tr>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type=" submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
+                                        </form>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
      @endforeach
             </tbody>
         </table>

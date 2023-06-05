@@ -28,13 +28,13 @@
             <label for="exampleInputEmail1">Nama Pengguna</label>
             <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Enter name">
-            <small id="emailHelp" class="form-text text-muted">example : Asrul Abdullah.</small>
+            <small id="emailHelp" class="form-text text-muted">example : Muhamad Rizky.</small>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Alamat Email</label>
             <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">ex. asrul.abdullah@unmuhpnk.ac.id.</small>
+            <small id="emailHelp" class="form-text text-muted">ex. muhamad.rizky@unmuhpnk.ac.id.</small>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
