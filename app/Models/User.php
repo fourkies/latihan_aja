@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -45,7 +46,7 @@ class User extends Authenticatable
 
     public function Jabatan()
     {
-        return $this->hasMany(Jabatan::class);
+        return $this->hasMany(Jabatan::class, 'user_id');
     }
 
     public function Kehadiran()
