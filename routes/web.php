@@ -17,7 +17,7 @@ use App\Http\Controllers\KehadiranController;
 |
 */
 
-Route::get('/login', function () {
+Route::get('/', function () {
     return view('login');
 });
 
