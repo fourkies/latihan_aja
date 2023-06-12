@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class AuthController extends Controller
 {
@@ -34,16 +35,22 @@ class AuthController extends Controller
     public function postLogin(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('admin')
+            return redirect()->intended('dashboard')
                 ->withSuccess('You have Successfully loggedin');
         }
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        //return redirect("login")->withErrors('Oppes! You have entered invalid credentials');
+        return Redirect::back()->withErrors(
+            [
+                'email' => 'Maaf, email yang anda masukkan salah',
+                'password' => 'Maaf, password yang anda masukkan salah'
+            ]
+        );
     }
 
     /**
@@ -73,7 +80,7 @@ class AuthController extends Controller
     public function dashboard()
     {
         if (Auth::check()) {
-            return view('dashboard');
+            return view('admin/dashboard_admin');
         }
 
         return redirect("login")->withSuccess('Opps! You do not have access');
