@@ -19,10 +19,10 @@ use App\Http\Controllers\KehadiranController;
 
 //Route::get('login', [AuthController::class, 'index'])->middleware('admin');
 
+
 Route::get('/', function () {
     return view('home');
 });
-
 // Route::get('/admin', function () {
 //     return view('admin/dashboard_admin');
 // });
